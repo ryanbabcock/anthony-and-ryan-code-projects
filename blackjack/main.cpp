@@ -1,23 +1,25 @@
 #include <iostream>
-#include <string>
 #include <vector>
+#include <string>
 
-using namespace std;
+#include "card.h"
+#include "deck.h"
 
-#include "Deck.h"
-#include "Card.h"
 
 int main() {
-	cout << "Welcome to Blackjack!\n" 
+	std::cout << "Welcome to Blackjack!\n" 
 	<< "How many players? (1-7): ";
 	int number_of_players;
-	cin >> number_of_players;
-	vector<string> players(0);
+	std::cin >> number_of_players;
+	std::vector<std::string> players(0);
 	for (int i=0; i < number_of_players; ++i){
-		cout << "Player " << i << ": ";
-		players.push_back(cin);
+		std::cout << "Player " << i << ": ";
+		std::string player_name;
+		std::cin >> player_name;
+		players.push_back(player_name);
 	}
-	Deck new_deck = Deck.createDeck();
+	Deck new_deck = Deck();
+	std::cout << '\n';
 	new_deck.printDeck();
 return 0;
 }

@@ -1,33 +1,33 @@
-#include <vector>
 #include <stdlib.h>     /* srand, rand */
 #include <time.h> 
 #include <algorithm> /* shuffle */
 
-using namespace std;
+#include <iostream>
+#include <vector>
 
-#include "Card.h"
-#include "Deck.h"
+#include "card.h"
+#include "deck.h"
 
 const int all_suits = 4 - 1;
-const int all values = 52 - 1;
+const int all_values = 14;
 
 Deck::Deck(){
+	 _deck.reserve(51);
 	int i = 0;
-	for (int j = 0; j <= all_suits; ++j) const{
-		//begin with 1 because card cant have value 0
-		for (int k = 1; k <= all_values; ++k) {
-			_current_deck[i] = Card(j, k);
+	for (int j = 0; j <= all_suits; ++j) {
+		//begin with 2 because card can't have value 0
+		for (int k = 2; k <= all_values; ++k) {
+			_deck.push_back(Card(j, k));
 			++i;
 		}
 	}
 }	
-
 void Deck::shuffleDeck(){
-	random_shuffle(_current_deck.begin(), _current_deck.end());
+	random_shuffle(_deck.begin(), _deck.end());
 }
 
 void Deck::printDeck(){
-	for (int i = 0; i < current_deck.size(); ++i){
-		cout << current_deck[i].suit << ' ' << current_deck[i].value << '\n';
+	for (int i = 0; i < _deck.size(); ++i){
+		std::cout << _deck[i]._suit << ' ' << _deck[i]._value << '\n';
 	}	
 }

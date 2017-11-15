@@ -3,7 +3,10 @@
 
 class Deck {
 	public:
-		vector<Card> _current_deck(49);
+		std::vector<Card> _deck;
+		Deck();
+		void shuffleDeck();
+		void printDeck();	
 };
 
 #endif

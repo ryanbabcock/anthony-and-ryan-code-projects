@@ -6,6 +6,7 @@ class Card {
 		//here are the individual card values
 		int _suit;
 		int _value;
+		Card(int suit, int value);
 };
 
 #endif
