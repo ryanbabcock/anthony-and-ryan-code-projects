@@ -20,6 +20,7 @@ int main() {
 	}
 	Deck new_deck = Deck();
 	std::cout << '\n';
+	new_deck.shuffleDeck();
 	new_deck.printDeck();
 return 0;
 }
