@@ -1,11 +1,11 @@
 #!/bin/bash
-lesson=lesson1
+lesson_no=4
 num=0
 IFS='
 '
-cd ~/Documents/memrise/$lesson
+cd ~/Documents/memrise/lesson$lesson_no
 while read line
 do
 	((num++))
-	say -v Nora -r 150 -o $num'_'$line.aac "$line"
-done < ~/Documents/memrise/$lesson.txt
+	say -v Nora -r 175 -o $num'_'$line.aac "$line"
+done < ~/Documents/memrise/lesson$lesson_no.txt
